@@ -890,23 +890,7 @@ div#large-visualization{
            return dt.toDateString()
           },
           formatDuration(total) {
-                if (total <= 0) {
-                  return ""
-                }
-                mins = total / 60
-                mins=Math.floor(mins)
-                secs = total % 60
-                hrs = 0
-                if (mins >= 60) {
-                  hrs = mins / 60
-                  mins = mins % 60
-                }
-              
-                hrs=Math.floor(hrs)
-                if (hrs > 0) {
-                  return `${hrs}:${mins}:${secs}`
-                }
-                return `${mins}:${secs}`
+            return new Date(SECONDS * 1000).toISOString().substr(11, 8).replace('-', ":")
               },
         },
         computed:{
