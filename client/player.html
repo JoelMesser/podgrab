@@ -890,7 +890,7 @@ div#large-visualization{
            return dt.toDateString()
           },
           formatDuration(total) {
-            return new Date(SECONDS * 1000).toISOString().substr(11, 8).replace('-', ":")
+            return new Date(total * 1000).toISOString().substr(11, 8).replace('-', ":")
               },
         },
         computed:{
